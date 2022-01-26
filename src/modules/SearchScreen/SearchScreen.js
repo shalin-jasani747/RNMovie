@@ -77,11 +77,11 @@ function SearchScreen({ navigation }) {
 
   return (
     <Container style={styles.container}>
+      {renderHeaderComponent(type, setType, dispatch)}
       <FlatList
         data={data}
         keyExtractor={(item) => String(item.id)}
         numColumns={2}
-        ListHeaderComponent={() => renderHeaderComponent(type, setType, dispatch)}
         ListEmptyComponent={() => renderEmptyComponent()}
         renderItem={({ item }) => renderMoviePoster(item, navigation, type, true)}
       />

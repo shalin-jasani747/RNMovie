@@ -2,6 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import { upperFirst } from 'lodash';
 import React, { useEffect, useState } from 'react';
 import { FlatList, ImageBackground, Text, TouchableOpacity, View } from 'react-native';
+import Secrets from 'react-native-config';
 import { useSelector } from 'react-redux';
 import NavigationRoutes from '../constants/NavigationRoutes';
 import CustomProgressCircle from './CustomProgressCircle';
@@ -21,9 +22,7 @@ export const renderMoviePoster = (item, navigation, type, fromSearch = false) =>
         }}
       >
         <ImageBackground
-          source={{
-            uri: `${'http://image.tmdb.org/t/p/w500/'}${item.poster_path}`
-          }}
+          source={{ uri: `${Secrets.IMAGE_URL}${item.poster_path}` }}
           style={styles.image}
         >
           <CustomProgressCircle percentage={item.vote_average} radious={24} />

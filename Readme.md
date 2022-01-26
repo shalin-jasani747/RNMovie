@@ -13,7 +13,7 @@ A react-native project for searching the movie and TV show and mark them as your
 
 ## Prerequisites
 
-**iOS** : XCode(113.2) onwards
+**iOS** : XCode(13.2) onwards
 
 **Android** : Android Studio(3.5.2) with gradle(7.1.2) onwards
 
@@ -34,7 +34,7 @@ A react-native project for searching the movie and TV show and mark them as your
 **Step 6:** Create .env file and put the following api urls into it
   1. `API_URL=https://api.themoviedb.org/3`
   2. `API_KEY=d9ca42f944024f53ccd5081fdfdbd2e1`
-  3. `IMAGE_URL=http://image.tmdb.org/t/p/w500/`
+  3. `IMAGE_URL=https://image.tmdb.org/t/p/w500/`
 
 ## How to Run the Project
 

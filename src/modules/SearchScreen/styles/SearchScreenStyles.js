@@ -4,6 +4,7 @@ import Colors from '../../../theme/Colors';
 const styles = StyleSheet.create({
   container: {flex: 1, backgroundColor: Colors.black, paddingBottom: 20},
   searchContainer: {
+    height: 130,
     backgroundColor: Colors.black,
     padding: 10,
     justifyContent: 'center'
@@ -15,7 +16,8 @@ const styles = StyleSheet.create({
     borderColor: '#fff',
     backgroundColor: '#fff',
     borderWidth: 1,
-    paddingLeft: 15
+    paddingLeft: 15,
+    height: 40
   },
   typeContainer: { flexDirection: 'row', alignItems: 'center', borderColor: 'white', borderWidth: 1, marginVertical: 10, marginHorizontal: 10 },
   typeText: { padding: 10, color: '#fff', textAlign: 'center', fontSize: 20 },

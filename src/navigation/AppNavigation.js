@@ -14,7 +14,7 @@ import Icon from 'react-native-vector-icons/AntDesign';
 
 const RootStack = createStackNavigator();
 const renderImage = () => {
-  return <Image source={Icons.back} style={{ width: 30, height: 30 }} />;
+  return <Image source={Icons.back} resizeMode={'contain'} style={{ width: 25, height: 25 }} />;
 };
 
 const stackScreenOptions = {

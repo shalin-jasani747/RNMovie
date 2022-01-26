@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     width: 420,
     height: 120
   },
-  cardFilm: { flexDirection: 'row', alignContent: 'space-between' },
+  cardFilm: { flexDirection: 'row', alignContent: 'space-between', alignItems: 'center' },
   icon: { marginTop: -5, marginHorizontal: 10 },
   filmIcon: { marginHorizontal: 10, marginBottom: 5 },
   overview: {
@@ -119,14 +119,11 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   favouriteIcon: {
-    position: 'absolute',
-    bottom: 0,
-    right: 15
+    marginRight: 10
   },
   eyeIcon: {
-    position: 'absolute',
-    bottom: 0,
-    right: 55
-  }
+    marginRight: 10
+  },
+  iconContainer: { flex: 1, justifyContent: 'flex-end', flexDirection: 'row', padding: 10}
 });
 export default styles;

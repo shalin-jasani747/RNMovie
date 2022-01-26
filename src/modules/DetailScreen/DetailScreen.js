@@ -103,11 +103,9 @@ const renderImageContainer = (backdrop_path, poster_path) => {
   );
 }
 
-const renderNameContainer = (title, tagline, type, data, fromSearch) => {
+const renderNameContainer = (title, tagline) => {
   return (
     <View style={styles.nameTagView}>
-      <RenderFavouriteIcon type={type} data={data} fromSearch={fromSearch} />
-      <RenderHideIcon type={type} data={data} />
       <Text style={styles.nameTextStyle}>{title}</Text>
       <Text style={styles.tagline}>{tagline}</Text>
     </View>
@@ -164,6 +162,15 @@ const renderOverviewContainer = (overview) => {
   );
 }
 
+const renderFavouriteAndHideIcon = (type, data, fromSearch) => {
+  return (
+    <View style={styles.iconContainer}>
+      <RenderFavouriteIcon type={type} data={data} fromSearch={fromSearch} />
+      <RenderHideIcon type={type} data={data} />
+    </View>
+  );
+}
+
 function DetailScreen({ route }) {
   const id = get(route, 'params.id', 0);
   const type = get(route, 'params.type', 'movie');
@@ -176,8 +183,10 @@ function DetailScreen({ route }) {
 
   let voteAvg = get(data, 'vote_average', 0);
   var title = get(data, 'title', '');
+  var name = get(data, 'name', '');
   var tagline = get(data, 'tagline', '');
   var release_date = get(data, 'release_date', '');
+  var first_air_date = get(data, 'first_air_date', '');
   var overview = get(data, 'overview', '');
   var backdrop_path = get(data, 'backdrop_path', '');
   var poster_path = get(data, 'poster_path', '');
@@ -186,9 +195,10 @@ function DetailScreen({ route }) {
   return (
     <ScrollView style={styles.mainContainer}>
       {renderImageContainer(backdrop_path, poster_path)}
-      {renderNameContainer(title, tagline, type, data, fromSearch)}
+      {renderFavouriteAndHideIcon(type, data, fromSearch)}
+      {renderNameContainer(type === 'movie' ? title : name, tagline)}
       {renderRatingContainer(voteAvg)}
-      {renderReleaseDateContainer(release_date)}
+      {renderReleaseDateContainer(type === 'movie' ? release_date : first_air_date)}
       {renderOverviewContainer(overview)}
     </ScrollView>
   );
